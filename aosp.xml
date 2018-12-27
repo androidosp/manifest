@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest>
+
+ <!-- Our remote -->
+  <remote  name="androidosp"
+           revision="pie"
+           fetch="https://github.com/androidosp/"  />
+
+ <!-- Lineage remote (Just in case) -->
+  <remote  name="los"
+           revision="lineage-16.0"
+           fetch="https://github.com/LineageOS/"  />
+
+
+ <!-- Removing the repos we track from our git -->
+<remove-project name="platform/bionic" />
+<remove-project name="platform/bootable/recovery" />
+<remove-project name="platform/build" />
+<remove-project name="platform/build/soong" />
+<remove-project name="platform/external/perfetto" />
+<remove-project name="platform/external/selinux" />
+<remove-project name="platform/external/tinycompress" />
+<remove-project name="platform/frameworks/av" />
+<remove-project name="platform/frameworks/base" />
+<remove-project name="platform/frameworks/compile/mclinker" />
+<remove-project name="platform/frameworks/native" />
+<remove-project name="platform/hardware/interfaces" />
+<remove-project name="platform/hardware/libhardware" />
+<remove-project name="platform/hardware/libhardware_legacy" />
+<remove-project name="platform/prebuilts/build-tools" />
+<remove-project name="platform/system/vold" />
+<remove-project name="platform/system/core" />
+
+<!-- Build first -->
+
+<project path="build/make" name="android_build" remote="androidosp" >
+        <copyfile src="core/root.mk" dest="Makefile" />
+        <linkfile src="CleanSpec.mk" dest="build/CleanSpec.mk" />
+        <linkfile src="buildspec.mk.default" dest="build/buildspec.mk.default" />
+        <linkfile src="core" dest="build/core" />
+        <linkfile src="envsetup.sh" dest="build/envsetup.sh" />
+        <linkfile src="target" dest="build/target" />
+        <linkfile src="tools" dest="build/tools" />      
+</project>
+         
+<project path="build/soong" name="android_build_soong" remote="androidosp" >
+                 <linkfile src="root.bp" dest="Android.bp" />
+        <linkfile src="bootstrap.bash" dest="bootstrap.bash" />
+</project>
+
+<!-- The remaining -->
+<project path="bionic" name="android_bionic" remote="androidosp" />
+<project path="bootable/recovery" name="android_bootable_recovery" remote="androidosp" />
+<project path="external/perfetto" name="android_external_perfetto" remote="androidosp" />
+<project path="external/selinux" name="android_external_selinux" remote="androidosp" />
+<project path="external/tinycompress" name="android_external_tinycompress" remote="androidosp" />
+<project path="frameworks/av" name="android_frameworks_av" remote="androidosp" />
+<project path="frameworks/base" name="android_frameworks_base" remote="androidosp" />
+<project path="frameworks/compile/mclinker" name="android_frameworks_compile_mclinker" remote="androidosp" />
+<project path="frameworks/native" name="android_frameworks_native" remote="androidosp" />
+<project path="hardware/interfaces" name="android_hardware_interfaces" remote="androidosp" />
+<project path="hardware/libhardware" name="android_hardware_libhardware" remote="androidosp" />
+<project path="hardware/libhardware_legacy" name="android_hardware_libhardware_legacy" remote="androidosp" />
+<project path="hardware/qcom/audio-caf/msm8996" name="android_hardware_qcom_audio" remote="androidosp" revision="pie-caf-8996" />
+<project path="hardware/qcom/display-caf/msm8996" name="android_hardware_qcom_display" remote="androidosp" revision="pie-caf-8996" />
+<project path="hardware/qcom/gps" name="android_hardware_qcom_gps" remote="androidosp" />
+<project path="hardware/qcom/media-caf/msm8996" name="android_hardware_qcom_media" remote="androidosp" revision="pie-caf-8996" />
+<project path="hardware/qcom/wlan-caf" name="android_hardware_qcom_wlan" remote="androidosp" revision="pie-caf" />
+<project path="hardware/ril-caf" name="android_hardware_ril" remote="androidosp" revision="pie-caf" />
+<project path="system/core" name="android_system_core" remote="androidosp" />
+<project path="system/vold" name="android_system_vold" remote="androidosp" />
+<project path="vendor/codeaurora/telephony" name="android_vendor_codeaurora_telephony" remote="androidosp" />
+<project path="vendor/qcom/opensource/cryptfs_hw" name="android_vendor_qcom_opensource_cryptfs_hw" remote="androidosp" />
+<project path="vendor/qcom/opensource/interfaces" name="android_vendor_qcom_opensource_interfaces" remote="androidosp" />
+
+<!-- A few from los -->
+<project path="external/ant-wireless/ant_native" name="android_external_ant-wireless_ant_native" remote="los" />
+<project path="external/ant-wireless/ant_service" name="android_external_ant-wireless_ant_service" remote="los" />
+<project path="external/ant-wireless/antradio-library" name="android_external_ant-wireless_antradio-library" remote="los" />
+
+</manifest>
