@@ -12,7 +12,7 @@
            fetch="https://github.com/LineageOS/"  />
 
 
- <!-- Removing the repos we track from our git -->
+<!-- Removing the repos we track from our git -->
 <remove-project name="platform/bionic" />
 <remove-project name="platform/bootable/recovery" />
 <remove-project name="platform/build" />
@@ -27,6 +27,7 @@
 <remove-project name="platform/hardware/interfaces" />
 <remove-project name="platform/hardware/libhardware" />
 <remove-project name="platform/hardware/libhardware_legacy" />
+<remove-project name="platform/hardware/qcom/gps" />
 <remove-project name="platform/prebuilts/build-tools" />
 <remove-project name="platform/system/vold" />
 <remove-project name="platform/system/core" />
