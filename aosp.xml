@@ -28,6 +28,8 @@
 <remove-project name="platform/hardware/libhardware" />
 <remove-project name="platform/hardware/libhardware_legacy" />
 <remove-project name="platform/hardware/qcom/gps" />
+<remove-project name="platform/hardware/qcom/wlan" />
+<remove-project name="platform/hardware/ril" />
 <remove-project name="platform/prebuilts/build-tools" />
 <remove-project name="platform/system/vold" />
 <remove-project name="platform/system/core" />
@@ -66,7 +68,9 @@
 <project path="hardware/qcom/display-caf/msm8996" name="android_hardware_qcom_display" remote="androidosp" revision="pie-caf-8996" />
 <project path="hardware/qcom/gps" name="android_hardware_qcom_gps" remote="androidosp" />
 <project path="hardware/qcom/media-caf/msm8996" name="android_hardware_qcom_media" remote="androidosp" revision="pie-caf-8996" />
+<project path="hardware/qcom/wlan" name="android_hardware_qcom_wlan" remote="androidosp" />
 <project path="hardware/qcom/wlan-caf" name="android_hardware_qcom_wlan" remote="androidosp" revision="pie-caf" />
+<project path="hardware/ril" name="android_hardware_ril" remote="androidosp" />
 <project path="hardware/ril-caf" name="android_hardware_ril" remote="androidosp" revision="pie-caf" />
 <project path="prebuilts/build-tools" name="android_prebuilts_build-tools" remote="androidosp" />
 <project path="system/core" name="android_system_core" remote="androidosp" />
